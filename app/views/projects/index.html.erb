@@ -1,0 +1,18 @@
+
+
+<%= render partial: "/projects/page_header" %>
+
+<!-- Page Content
+==================================-->
+<div id="en-content">
+
+    <div class="container"> <!-- Container -->
+        <div class="clearfix"></div>
+        <div class="smallspacer"></div>
+        <div class="row">
+          <% @projects.each do |project| %>
+             <%= render partial: "/modules/list/project", object: project %>
+          <% end %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="row">
+	<div class="col-sm-12">
+ 
+		
+		<%= form.input :title, :label => "Título" %>
+		<%= form.input :description, as: :textile_editor, :label => "Descripción" %>
+		<hr />
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6">		
+		<%= form.input :parent_id, :label => "ID de la categoría padre"%>
+	</div>
+	<div class="col-sm-6">
+		<h3>Imagen principal</h3>
+		<% unless @category.image.blank? %>
+			<div class="image_preview">
+				<%= image_tag(@category.image.url(:normal)) %>
+			</div>
+		<% end %>
+		<%= form.input :image, :label => "Imagen"%>
+	</div>
+</div>
+
+<hr />
+<h3>Imágenes</h3>
+<div class="row images">
+	<%= form.simple_fields_for :images do |image| %>
+		<%= render 'image_fields', :f => image %>
+	<% end %>
+
+
+	<div class="links">
+		<%= link_to_add_association form, :images do %>
+			<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> añadir imagen
+		<% end %>
+	</div>
+</div>
+<hr />
+
+<div class="row">
+	<div class="col-sm-6">
+		<h3>¿Es un elemento <strong>destacado</strong>?</h3>
+			<%= form.input_field :featured, as: :boolean, checked_value: true, unchecked_value: false %>
+	</div>
+</div>
+<hr />
+<div class="form-actions">
+  <% label = @category.new_record? ? "Crear" : "Actualizar" -%>
+  <%= form.submit label, :class => 'btn btn-primary' %>
+  &nbsp;
+  <%= link_to "cancelar", super_admin_categories_path, :class => 'btn btn-default' %>
+</div>

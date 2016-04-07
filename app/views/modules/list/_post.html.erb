@@ -1,0 +1,9 @@
+
+<div class="featured-img">
+  <% unless post.image.blank? %>
+    <%= image_tag post.image.url(:normal), :class => 'img-responsive' %>
+  <% end %>
+</div>
+<a href="single-blog.html"><h3><%= post.title %></h3></a>
+<hr>
+<p><%= post.body %></p>

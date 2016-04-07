@@ -1,0 +1,9 @@
+<div class="page-header clearfix">
+<div class="title">
+	<h1>Nueva Colaboracion</h1>
+</div>
+<hr />
+<%= render :partial => 'super_admin/template/form_errors', :object => @post %>
+<%= simple_form_for @post, :url => url_for(:controller => 'super_admin/posts', :action => 'create'), :method => 'post', :html => { :role => "form" } do |form| %>
+	<%= render :partial => "form_for_#{@post.form_title}", :locals => { :form => form } rescue render :partial => "form", :object => form %>
+<% end %>

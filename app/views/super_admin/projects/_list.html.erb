@@ -1,0 +1,16 @@
+<% for @project in @projects %>
+	<div class="module_item">
+		<div class="item_name">
+			<span><%= link_to @project.title, :controller => 'super_admin/projects', :action => 'edit', :id => @project.id%></span>
+			<span><%= @project.product.title %></span>
+		</div>
+		<div class="module_item_actions">
+			<p>
+				<%= link_to '<span class="glyphicon glyphicon-file"></span>'.html_safe, super_admin_project_path(@project.id), :class => 'list-row-action-wrapper-link' %>
+ 			  <%= link_to '<span class="glyphicon glyphicon-pencil"></span>'.html_safe, edit_super_admin_project_path(@project.id), :class => 'list-row-action-wrapper-link' %>
+				<%= link_to '<span class="glyphicon glyphicon-trash"></span>'.html_safe, super_admin_project_path(@project.id), :class => 'list-row-action-delete-one list-row-action-wrapper-link', :method => :delete, :data => {:confirm => "Estas seguro?"} %>
+			</p>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+<% end %>

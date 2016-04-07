@@ -1,0 +1,2 @@
+module SuperAdmin::WebimagesHelper
+end

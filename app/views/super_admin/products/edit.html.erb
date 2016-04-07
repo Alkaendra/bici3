@@ -1,0 +1,10 @@
+<div class="page-header clearfix">
+<div class="title">
+	<h1>Editando Productos</h1>
+</div>
+<hr />
+<%= render :partial => 'super_admin/template/form_errors', :object => @product %>
+
+ <%= simple_form_for @product, :url => url_for(:controller => 'super_admin/products', :action => 'update'), :method => 'put', :html => { :role => "form" }  do |f| %>
+	<%= render :partial => "form", :object => @product, :locals => {:f => f} %>
+<% end %>

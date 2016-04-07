@@ -1,0 +1,2 @@
+module SuperAdmin::ProjectTypesHelper
+end

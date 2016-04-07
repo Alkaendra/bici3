@@ -1,0 +1,49 @@
+
+
+
+<%= form.input :module, :collection => [['CABECERA PAGINA PRINCIPAL', :FRONTSLIDER], ['PIE PAGINA PRINCIPAL', :FRONTFOOTER]] %>
+
+<div class="row">
+	<div class="col-sm-12">
+
+		<%= form.input :title %>
+		<hr />
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-6">
+		<h3>Imagen principal</h3>
+		<% unless @webimage.image.blank? %>
+			<div class="image_preview">
+				<%= image_tag(@webimage.image.url(:thumb)) %>
+			</div>
+		<% end %>
+		<%= form.input :image %>
+	</div>
+</div>
+
+<hr />
+
+<h3>Images</h3>
+<div class="row images">
+	<%= form.simple_fields_for :images do |image| %>
+		<%= render 'image_fields', :f => image %>
+	<% end %>
+
+
+	<div class="links">
+		<%= link_to_add_association form, :images do %>
+			<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> add image
+		<% end %>
+	</div>
+</div>
+<hr />
+
+
+<div class="form-actions">
+  <% label = @webimage.new_record? ? "Crear" : "Actualizar" -%>
+  <%= form.submit label, :class => 'btn btn-primary' %>
+  &nbsp;
+  <%= link_to "cancelar", super_admin_webimages_path, :class => 'btn btn-default' %>
+</div>

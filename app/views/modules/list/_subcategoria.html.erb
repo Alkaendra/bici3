@@ -1,0 +1,13 @@
+
+<div class="col-sm-6 col-md-4 col-lg-4 <%= subcategoria.slug %>">
+  <div class="item"><!-- Portfolio Item #1 -->
+    <div class="hover-bg">
+      <div class="hover-text off">
+        <h4><%= subcategoria.title %></h4>
+        <br>
+        <p><%= truncate(subcategoria.description, length: 150) %></p>        
+      </div>
+      <%= image_tag subcategoria.image.url(:normal), :class => 'img-responsive' %>
+    </div>
+  </div>
+</div>

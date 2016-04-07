@@ -1,0 +1,42 @@
+<div class="page-header clearfix">
+  <div class="pull-left">
+    <h1><%= @category.title %></h1>
+  </div>
+  <div class="pull-right btn-header">
+    <%= link_to '<span class="glyphicon glyphicon-pencil"></span> Editar'.html_safe, edit_super_admin_category_path(@category.id), :class => 'btn btn-primary' %></span>
+    &nbsp;
+    <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Volver'.html_safe, super_admin_categories_path, :class => 'btn btn-default' %></span>
+  </div>
+</div>
+
+<div class=tabs-content>
+
+<p>
+  <strong>Id:</strong>
+  <%= @category.id %>
+</p>
+<p>
+  <strong>Id de Categoría padre:</strong>
+  <%= @category.parent_id %>
+</p>
+<p>
+  <strong>Nombre:</strong>
+  <%= @category.title %>
+</p>
+<p>
+  <strong>Descripcion:</strong>
+  <%= @category.description %>
+</p>
+
+<p>
+  <strong>Destacado:</strong>
+  <%= @category.featured %>
+</p>
+
+<%= image_tag(@category.image.url(:normal)) %>
+
+
+
+
+
+</div>

@@ -1,0 +1,2 @@
+module SuperAdmin::ProductsHelper
+end

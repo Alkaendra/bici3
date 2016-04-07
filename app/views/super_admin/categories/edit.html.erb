@@ -1,0 +1,9 @@
+<div class="page-header clearfix">
+<div class="title">
+	<h1>Editando Categorias</h1>
+</div>
+<hr />
+<%= render :partial => 'super_admin/template/form_errors', :object => @category %>
+<%= simple_form_for @category, :url => url_for(:controller => 'super_admin/categories', :action => 'update'), :method => 'put', :html => { :role => "form" } do |form| %>
+	<%= render :partial => "form_for_#{@category.form_title}", :locals => { :form => form } rescue render :partial => "form", :object => form %>
+<% end %>

@@ -1,0 +1,44 @@
+ <% unless current_super_admin.blank? %>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/super_admin/dashboard"><span class="glyphicon glyphicon-home"></span></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <!-- <li><a href="/admin/pages">Pages</a></li>-->
+          <li><a href="/super_admin/categories">Categorías</a></li>
+          <li><a href="/super_admin/products">Productos</a></li>
+          <li><a href="/super_admin/project_types">Tipos de evento</a></li>
+          <li><a href="/super_admin/projects">Eventos</a></li>
+          <li><a href="/super_admin/posts">Comentarios</a></li>
+          <li><a href="/super_admin/webimages">Imágenes</a></li>
+
+        <!--  <li><a href="/admin/users">Users</a></li>
+          <li><a href="/admin/public_users">Public Users</a></li>
+          <!-- <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="/users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-stats"></span> Reports</a></li>
+              <li><a href="/configurations"><span class="glyphicon glyphicon-adjust"></span> Configuration</a></li>
+            </ul>
+          </li> -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+             <%= link_to(destroy_super_admin_session_path, :method => :delete) do %>
+              <span class="glyphicon glyphicon-remove-circle" data-toggle="tooltip" data-placement="bottom" title="Sign Out"></span>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>

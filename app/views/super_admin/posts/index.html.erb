@@ -1,0 +1,15 @@
+<div class="page-header clearfix">
+<div class="title">
+	<h1>Colaboraciones</h1>
+</div>
+<hr />
+<ul class="nav nav-tabs">
+	<li class=active> <%= link_to('Listado', super_admin_posts_path) %></li>
+	<li> <%= link_to('Nuevo', new_super_admin_post_path) %></li>
+</ul>
+
+<div class="module_list">
+	<div class="module_partial">
+		<%= render :partial => 'list' %>
+	</div>
+</div>

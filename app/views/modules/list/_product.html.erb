@@ -1,0 +1,27 @@
+<div class="col-md-3 col-sm-6 masonry-grid-item">
+  <div class="listing-item white-bg bordered mb-20">
+    <div class="overlay-container">
+      <%= image_tag product.image.url(:normal), :class => 'img-responsive', :alt => product.title %>
+      <%= link_to product.image.url(:normal), :class => 'overlay-link popup-img-single' do %>
+        <i class="fa fa-search-plus"></i>
+      <% end %>
+      <!--<span class="badge">30% OFF</span>-->
+      <div class="overlay-to-top links">
+        <span class="small">  
+          <%= link_to product_path(product.id), :class => "btn-sm-link" do %>
+              <i class="icon-link pr-5"></i>
+              Ver <%= product.title %>
+          <% end %>              
+        </span>
+      </div>
+    </div>
+    <div class="body">
+      <h3><a href="shop-product.html"><%= product.title %></a></h3>
+      <p class="small"><%= truncate(product.description, length: 150) %></p>
+      <h3 class="producto-precio"><%= product.precio %>€</h3>                  
+    </div>
+  </div>
+</div>
+
+
+

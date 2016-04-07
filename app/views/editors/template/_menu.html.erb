@@ -1,0 +1,20 @@
+<div class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Deviseadmin</a>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <%- if current_editor %>
+      <ul class="nav">
+        <li><%= link_to current_editor.email, "/editors/dashboard" %></li>
+      </ul>
+      <ul class="nav pull-right">
+            <li><%= link_to "Logout", destroy_editor_session_path, method: "DELETE"  %></li>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+</div>

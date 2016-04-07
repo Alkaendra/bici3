@@ -1,0 +1,13 @@
+<div class="col-sm-6 col-md-4 col-lg-4">
+  <div class="item"><!-- Portfolio Item #1 -->
+    <div class="hover-bg">
+      <div class="hover-text off">
+        <h4><%= categoria.title %></h4>
+        <br>
+        <p><%= truncate(categoria.description, length: 150) %></p>
+        <a class="read-more" href="single-project.html">Ver más <span class="fa fa-chevron-circle-right"></span></a>
+      </div>
+      <%= image_tag categoria.image.url(:thumb), :class => 'img-responsive' %>
+    </div>
+  </div>
+</div>

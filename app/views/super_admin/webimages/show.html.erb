@@ -1,0 +1,34 @@
+<div class="page-header clearfix">
+  <div class="pull-left">
+    <h1><%= @webimage.title %></h1>
+  </div>
+  <div class="pull-right btn-header">
+    <%= link_to '<span class="glyphicon glyphicon-pencil"></span> Editar'.html_safe, edit_super_admin_webimage_path(@webimage.id), :class => 'btn btn-primary' %></span>
+    &nbsp;
+    <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Volver'.html_safe, super_admin_webimages_path, :class => 'btn btn-default' %></span>
+  </div>
+</div>
+
+<div class=tabs-content>
+
+<p>
+  <strong>Id:</strong>
+  <%= @webimage.id %>
+</p>
+
+  <strong>Nombre:</strong>
+  <%= @webimage.title %>
+</p>
+<p>
+  <strong>Modulo:</strong>
+  <%= @webimage.module %>
+</p>
+
+
+<%= image_tag(@webimage.image.url(:thumb)) %>
+
+
+
+
+
+</div>

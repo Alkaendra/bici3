@@ -1,0 +1,213 @@
+<li class="dropdown"><%= link_to_unless_current('productos', products_path) {  link_to('productos', products_path, class: 'dropdown-toggle') } %>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">productos y servicios<span class="caret"></span></a>
+
+
+<%= render "welcome/sliders" %>
+  <%= #render "welcome/featured_services" %>
+  <%= #render "welcome/featured_projects" %>
+  <%= #render "welcome/imagecuote" %>
+
+
+
+  <% unless category.images.blank? %>
+    <div class="row">
+      <% for image in category.images %>
+        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+          <a class="thumbnail" data-toggle="modal" data-target="#imageModal_<%= image.id %>" href="#">
+            <%= image_tag image.photo.url(:thumb) %>
+          </a>
+
+          <!-- Image Modal -->
+          <div class="modal fade" id="imageModal_<%= image.id %>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <%= image_tag image.photo.url(:normal), :class => 'media-object' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+
+
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <% for slider in @sliders %>
+      <%= render :partial => '/modules/slider', :object => slider %>
+      <% unless slider == @sliders.last %>
+    <% end %>
+    <% end %>
+
+  </div>
+
+
+
+<li><%= link_to_unless_current('Home', root_path) {  link_to('Home', root_path, class: 'active') } %></li>
+
+<li class="has-dropdown"><%= link_to_unless_current('productos y servicios', products_path) {  link_to('productos y servicios', products_path, :class => 'dropdown-toggle', "data-toggle"=>'dropdown',:role => "button", "aria-expanded" => "false" ) } %>
+
+
+---
+  <% if @categories %>
+          <% @categories.each do |category| %>
+            <li><%= link_to_in_li category.title, products_path(:category => category.id), id: "category_link" %></li>
+          <% end %>
+          <% end %>
+
+
+---
+		<script>
+			$(document).ready(function(){
+				$('a').nivoLightbox();
+		</script>
+
+
+
+
+
+/******SLIDER RAILS 4***********/
+#application.html.erb | footer
+$(function(){
+	$('#header-slider').carousel();
+});
+
+#_sliders.html.erb
+<div id="header-slider" class="carousel slide carousel-fade" data-ride="carousel">
+
+  <ol class="carousel-indicators">
+     <% @sliders.each_with_index do |item,index| %>
+         <li data-target="#header-slider" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+     <% end %>
+   </ol>
+
+   <div class="carousel-inner">
+     <% @sliders.each_with_index do |slider,index| %>
+         <div class="item <%= 'active' if index == 0 %>">
+           <%= image_tag(slider.image.url(:thumb), class: 'img-responsive', data: {src: slider.image.url(:thumb) }) %>
+           <div class="carousel-caption">
+                    <h1>Líderes en Metal <br>y Estructuras</h1>
+                    <p class="lead">Con la confianza de miles de clientes en toda España.</p>
+                    <a class="btn btn-default en-btn" href="services.html" role="button">Nuestros Servicios</a>
+                </div>
+         </div>
+     <% end %>
+   </div>
+
+
+
+
+  <a class="left carousel-control" href="#header-slider" role="button" data-slide="prev">
+    <span class="fa fa-long-arrow-left" aria-hidden="true"></span>
+  </a>
+  <a class="right carousel-control" href="#header-slider" role="button" data-slide="next">
+    <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
+  </a>
+</div>
+
+CSS
+.carousel-controls{
+ position:relative; 
+  width:300px;
+  margin:0 auto;
+}
+
+.carousel-indicators{
+   top:0px; 
+}
+
+
+/******BOOTSTRAP MENU RAILS 4***********/
+#application.html.erb
+			<nav id="main-menu" class="navbar navbar-default">
+				<%= render :partial => 'template/menu' %>
+			</nav>
+
+#application_helper.html.erb
+
+  def is_active?(link_path)
+    if current_page?(link_path)
+      "active"
+    else
+      ""
+    end
+   end
+
+#_menu.html.erb
+
+
+<div class="container-fluid">
+
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myMenu">
+      <i class="fa fa-list-ul"></i>
+    </button>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="myMenu">
+
+    <ul class="nav navbar-nav navbar-left">
+      <li class="<%= is_active?(root_path) %>">
+        <%= link_to "inicio", root_path %>
+      </li>
+      <li class="dropdown <%= is_active?(products_path) %>">
+        <%= link_to  '#', :class => 'dropdown-toggle', :'data-toggle' => 'dropdown' do %>
+        productos y servicios
+        <b class="caret"></b>
+        <% end %>
+        <ul class="dropdown-menu">
+          <% Category.all.each do |category| %>
+          <li><%= link_to category.title, products_path(:category => category.id) %></li>
+          <% end %>
+        </ul>
+      </li>
+      <li class="dropdown <%= is_active?(projects_path) %>">
+        <%= link_to  '#', :class => 'dropdown-toggle', :'data-toggle' => 'dropdown' do %>
+        proyectos realizados
+        <b class="caret"></b>
+        <% end %>
+        <ul class="dropdown-menu">
+          <% ProjectType.all.each do |project_type| %>
+          <li><%= link_to project_type.title, projects_path(:project_type => project_type.id) %></li>
+          <% end %>
+        </ul>
+      </li>
+      <li class="<%= is_active?(contacts_path) %>">
+        <%= link_to "contacto", contacts_path %>
+      </li>
+      <li class="<%= is_active?(posts_path) %>">
+        <%= link_to "colaboraciones", posts_path %>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/super_admin/sign_in">Registro</a></li>
+      <li>
+        <% if super_admin_signed_in? %>
+        <%= link_to(destroy_super_admin_session_path, :method => :delete) do %>
+        <span class="glyphicon glyphicon-remove-circle" data-toggle="tooltip" data-placement="bottom" title="Sign Out"></span>
+        <% end %>
+        <% end %>
+      </li>
+    </ul>
+
+    <form class="navbar-form navbar-right" role="search">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Busqueda de..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+        </span>
+      </div>
+    </form>
+  </div><!-- /.navbar-collapse -->
+
+</div><!-- /.container -->
+
+

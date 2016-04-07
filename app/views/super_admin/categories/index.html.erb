@@ -1,0 +1,17 @@
+<div class="page-header clearfix">
+<div class="title">
+	<h1>Categorías</h1>
+</div>
+<hr />
+<hr />
+<ul class="nav nav-tabs">
+	<li class=active> <%= link_to('Listado', super_admin_categories_path) %></li>
+	<li> <%= link_to('Nuevo', new_super_admin_category_path) %></li>
+</ul>
+
+<div class="module_list">
+	<div class="module_partial">
+		<%= render :partial => 'list' %>
+	</div>
+</div>
+

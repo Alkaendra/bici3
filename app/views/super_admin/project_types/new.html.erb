@@ -1,0 +1,10 @@
+<div class="page-header clearfix">
+<div class="title">
+	<h1>Nuevo Tipo de Proyecto</h1>
+</div>
+<hr />
+<%= render :partial => 'super_admin/template/form_errors', :object => @project_type %>
+
+<%= simple_form_for @project_type, :url => url_for(:controller => 'super_admin/project_types', :action => 'create'), :method => 'post', :html => { :role => "form" }  do |f| %>
+ <%= render :partial => "form", :object => @project_type, :locals => {:f => f} %>
+<% end %>

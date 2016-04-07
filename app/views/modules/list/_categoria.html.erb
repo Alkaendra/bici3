@@ -1,0 +1,30 @@
+<div class="col-md-3 col-sm-6 masonry-grid-item">
+  <div class="listing-item white-bg bordered mb-20">
+    <div class="overlay-container">
+      <%= image_tag categoria.image.url(:normal), :class => 'img-responsive', :alt => categoria.title %>
+      <%= link_to categoria.image.url(:normal), :class => 'overlay-link popup-img-single' do %>
+        <i class="fa fa-search-plus"></i>
+      <% end %>
+      <!--<span class="badge">30% OFF</span>-->
+      <div class="overlay-to-top links">
+        <span class="small">
+          <% if !categoria.children.empty? %>
+            <%= link_to categories_path(:category => categoria.id, :parent => true), :class => "btn-sm-link" do %>
+              <i class="icon-link pr-5"></i>
+              Ver subcategorías
+            <% end %>
+          <% else %>
+            <%= link_to products_path(:category => categoria.id), :class => "btn-sm-link" do %>
+              <i class="icon-link pr-5"></i>
+              Ver productos 
+            <% end %>
+          <% end %>       
+        </span>
+      </div>
+    </div>
+    <div class="body">
+      <h3><%= link_to categoria.title, categories_path(:category => categoria.id, :parent => true) %></h3>
+      <p class="small"><%= categoria.description %></p>                     
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="module_item">
+	<div class="item_id">
+			<p>ID</p>
+	</div>
+	<div class="item_name">
+			<p>Título</p>
+	</div>
+	<div class="item_pid">
+			<p>ID de Padre</p>
+	</div>
+</div>
+<% for @category in @categories %>
+	<div class="module_item">
+		<div class="item_id">
+			<p><%= @category.id %></p>
+		</div>
+		<div class="item_name">
+			<%= link_to @category.title, :controller => 'super_admin/categories', :action => 'edit', :id => @category.id%>
+		</div>
+		<div class="item_pid">
+			<p><%= @category.parent_id %></p>
+		</div>		
+		<div class="module_item_actions">
+			<p>
+				<%= link_to '<span class="glyphicon glyphicon-file"></span>'.html_safe, super_admin_category_path(@category.id), :class => 'list-row-action-wrapper-link' %>
+ 			  <%= link_to '<span class="glyphicon glyphicon-pencil"></span>'.html_safe, edit_super_admin_category_path(@category.id), :class => 'list-row-action-wrapper-link' %>
+				<%= link_to '<span class="glyphicon glyphicon-trash"></span>'.html_safe, super_admin_category_path(@category.id), :class => 'list-row-action-delete-one list-row-action-wrapper-link', :method => :delete, :data => {:confirm => "Estas seguro?"} %>
+			</p>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+<% end %>

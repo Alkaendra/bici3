@@ -1,0 +1,25 @@
+
+<%= form.input :title %>
+<%= form.input :body, as: :textile_editor %>
+<hr />
+
+<div class="row">
+	<div class="col-sm-6">
+		<h3>Main Image</h3>
+		<% unless @post.image.blank? %>
+			<div class="image_preview">
+				<%= image_tag(@post.image.url(:thumb)) %>
+			</div>
+		<% end %>
+		<%= form.input :image %>
+	</div>
+</div>
+
+<hr />
+
+<div class="form-actions">
+  <% label = @post.new_record? ? "Crear" : "Actualizar" -%>
+  <%= form.submit label, :class => 'btn btn-primary' %>
+  &nbsp;
+  <%= link_to "cancelar", super_admin_posts_path, :class => 'btn btn-default' %>
+</div>

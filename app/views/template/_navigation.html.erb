@@ -1,0 +1,201 @@
+<header class="header fixed clearfix dark">
+					
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3">
+								<!-- header-left start -->
+								<!-- ================ -->
+								<div class="header-left clearfix">
+
+									<!-- logo -->
+									<div id="logo" class="logo">
+										<%= link_to image_tag(('logo_fondo_negro.png'), :alt => "bicicletea"),root_path %>
+										
+									</div>
+
+									<!-- name-and-slogan
+									<div class="site-slogan">
+										Multipurpose HTML5 Template
+									</div> -->
+									
+								</div>
+								<!-- header-left end -->
+
+							</div>
+							<div class="col-md-9">
+					
+								<!-- header-right start -->
+								<!-- ================ -->
+								<div class="header-right clearfix">
+									
+								<!-- main-navigation start -->
+								<!-- classes: -->
+								<!-- "onclick": Makes the dropdowns open on click, this the default bootstrap behavior e.g. class="main-navigation onclick" -->
+								<!-- "animated": Enables animations on dropdowns opening e.g. class="main-navigation animated" -->
+								<!-- "with-dropdown-buttons": Mandatory class that adds extra space, to the main navigation, for the search and cart dropdowns -->
+								<!-- ================ -->
+								<div class="main-navigation  animated with-dropdown-buttons">
+
+									<!-- navbar start -->
+									<!-- ================ -->
+									<nav class="navbar navbar-default" role="navigation">
+										<div class="container-fluid">
+
+											<!-- Toggle get grouped for better mobile display -->
+											<div class="navbar-header">
+												<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+													<span class="sr-only">Toggle navigation</span>
+													<span class="icon-bar"></span>
+													<span class="icon-bar"></span>
+													<span class="icon-bar"></span>
+												</button>
+												
+											</div>
+
+											<!-- Collect the nav links, forms, and other content for toggling -->
+											<div class="collapse navbar-collapse" id="navbar-collapse-1">
+												<!-- main-menu -->
+												<ul class="nav navbar-nav ">
+
+													<!-- mega-menu start -->													
+													<li class="dropdown active mega-menu">
+														<%= link_to "Inicio", root_path %>
+													</li>
+													<!-- mega-menu end -->
+													<!-- mega-menu start -->
+													<li class="dropdown  mega-menu">
+														<a href="" class="dropdown-toggle" data-toggle="dropdown">Conócenos</a>
+														<ul class="dropdown-menu narrow">
+															<li>
+																<div class="row">
+																	<div class="col-lg-8 col-md-9">
+																		<h4 class="title">Descubre Bicicletea</h4>
+																		<div class="row">
+																		
+																			<ul class="menu">
+																					<li ><a href="page-about.html"><i class="fa fa-angle-right"></i>Tarifas de Alquiler</a></li>
+																					<li ><a href="page-about-2.html"><i class="fa fa-angle-right"></i>Marcas que trabajamos</a></li>
+																					<li ><a href="page-about-3.html"><i class="fa fa-angle-right"></i>Galería</a></li>
+																			</ul>
+																		</div>						
+																	</div>
+																	<div class="col-lg-4 col-md-3 hidden-sm">
+																		<h4 class="title">Premium HTML5 Template</h4>
+																		<p class="mb-10">The Project is perfectly suitable for corporate, business and company webpages.</p>
+																		<img src="images/section-image-3.png" alt="The Project">
+																	</div>
+																</div>
+															</li>
+														</ul>
+													</li>
+													<!-- mega-menu end -->
+													<li class="dropdown mega-menu">
+														<%= link_to "Productos", categories_path, :class => "dropdown-toggle" %>
+														<ul class="dropdown-menu narrow">
+															<li>
+																<div class="row">
+																<h4 class="title">Ven a verlo a nuestra tienda</h4>
+																	<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
+																		<ul class="menu">
+																			<% @categorias.all.each do |categoria| %>
+                      <li><%= link_to categoria.title, categories_path(:category => categoria.id) %></li>
+                      <% end %>
+																		</ul>
+																    </div>
+																	<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
+																		<%= image_tag 'Casco_Trail.png', :alt => "" %>
+																	</div>
+															   </div>
+															</li>								
+														</ul>
+													</li>
+													<!-- mega-menu start -->													
+													<li class="dropdown  mega-menu narrow">
+														<a href="#" class="dropdown-toggle" data-toggle="dropdown">Noticias</a>								
+													</li>
+													<!-- mega-menu end -->
+													<li class="dropdown ">
+														<a href="portfolio-grid-2-3-col.html" class="dropdown-toggle" data-toggle="dropdown">B-You</a>											
+													</li>
+													<li class="dropdown ">
+														<%= link_to "Contacto", contacts_path %>
+														
+													</li>										
+												</ul>
+												<!-- main-menu end -->
+												
+												<!-- header dropdown buttons -->
+												<div class="header-dropdown-buttons hidden-xs ">
+													<div class="btn-group dropdown">
+														<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-search"></i></button>
+														<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
+															<li>
+																<form role="search" class="search-box margin-clear">
+																	<div class="form-group has-feedback">
+																		<input type="text" class="form-control" placeholder="Search">
+																		<i class="icon-search form-control-feedback"></i>
+																	</div>
+																</form>
+															</li>
+														</ul>
+													</div>
+													<div class="btn-group dropdown">
+														<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-basket-1"></i><span class="cart-count default-bg">8</span></button>
+														<ul class="dropdown-menu dropdown-menu-right dropdown-animation cart">
+															<li>
+																<table class="table table-hover">
+																	<thead>
+																		<tr>
+																			<th class="quantity">QTY</th>
+																			<th class="product">Product</th>
+																			<th class="amount">Subtotal</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td class="quantity">2 x</td>
+																			<td class="product"><a href="shop-product.html">Android 4.4 Smartphone</a><span class="small">4.7" Dual Core 1GB</span></td>
+																			<td class="amount">$199.00</td>
+																		</tr>
+																		<tr>
+																			<td class="quantity">3 x</td>
+																			<td class="product"><a href="shop-product.html">Android 4.2 Tablet</a><span class="small">7.3" Quad Core 2GB</span></td>
+																			<td class="amount">$299.00</td>
+																		</tr>
+																		<tr>
+																			<td class="quantity">3 x</td>
+																			<td class="product"><a href="shop-product.html">Desktop PC</a><span class="small">Quad Core 3.2MHz, 8GB RAM, 1TB Hard Disk</span></td>
+																			<td class="amount">$1499.00</td>
+																		</tr>
+																		<tr>
+																			<td class="total-quantity" colspan="2">Total 8 Items</td>
+																			<td class="total-amount">$1997.00</td>
+																		</tr>
+																	</tbody>
+																</table>
+																<div class="panel-body text-right">	
+																	<a href="shop-cart.html" class="btn btn-group btn-gray btn-sm">View Cart</a>
+																	<a href="shop-checkout.html" class="btn btn-group btn-gray btn-sm">Checkout</a>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<!-- header dropdown buttons end-->
+												
+											</div>
+
+										</div>
+									</nav>
+									<!-- navbar end -->
+
+								</div>
+								<!-- main-navigation end -->	
+								</div>
+								<!-- header-right end -->
+					
+							</div>
+						</div>
+					</div>
+					
+				</header>

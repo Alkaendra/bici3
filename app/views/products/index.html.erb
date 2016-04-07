@@ -1,0 +1,29 @@
+         <div id="page-start"></div>
+            <section class="section light-gray-bg clearfix">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- pills start -->
+                            <!-- ================ -->
+                            <!-- Nav tabs -->
+                            <!--<ul class="nav nav-pills" role="tablist">
+                                <li class="active"><a href="#pill-1" role="tab" data-toggle="tab" title="Latest Arrivals"><i class="icon-star"></i> Latest Arrivals</a></li>
+                                <li><a href="#pill-2" role="tab" data-toggle="tab" title="Featured"><i class="icon-heart"></i> Featured</a></li>
+                                <li><a href="#pill-3" role="tab" data-toggle="tab" title="Top Sellers"><i class=" icon-up-1"></i> Top Sellers</a></li>
+                            </ul>-->
+                            <!-- Tab panes -->
+                            
+                            <div class="tab-content clear-style">
+                                <div class="tab-pane active" id="pill-1">
+                                    <div class="row masonry-grid-fitrows grid-space-10">
+                                        <% @products.each do |product| %>
+                                            <%= render partial: "/modules/list/product", object: product %>
+                                        <% end %>                                      
+                                    </div>
+                                </div>                                
+                            </div>
+                            <!-- pills end -->
+                        </div>
+                    </div>
+                </div>
+            </section>

@@ -1,0 +1,12 @@
+<div class="page-header clearfix">
+<div class="title">
+	<h1>Nueva Imagen</h1>
+</div>
+<hr />
+<%= render :partial => 'super_admin/template/form_errors', :object => @webimage %>
+
+
+
+<%= simple_form_for @webimage, :url => url_for(:controller => 'super_admin/webimages', :action => 'create'), :method => 'post', :html => { :role => "form" } do |form| %>
+	<%= render :partial => "form_for_#{@webimage.form_title}", :locals => { :form => form } rescue render :partial => "form", :object => form %>
+<% end %>

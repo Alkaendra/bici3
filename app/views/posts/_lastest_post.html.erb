@@ -1,0 +1,18 @@
+<div class="sidebar-widget recent-posts">
+  <div class="widget-title text-left">
+    <h4>Entradas Recientes</h4>
+    <hr>
+  </div>
+<% if !@recent_posts.nil? %>
+  <% @recent_posts.each do |post| %>
+    <div class="media">
+      <div class="media-left">
+        <%= link_to (image_tag post.image.url(:thumb)), post_path(post.id), :class => 'img-responsive' %>
+      </div>
+      <div class="media-body">
+        <a href="#"><h5><%= post.title %></h5></a>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+</div>

@@ -1,0 +1,51 @@
+<% if params[:project_type_id].blank? %>
+	<%= f.input :project_type_id, collection: ProjectType.all.order("title DESC") %>
+<% else %>
+	<%= f.input :project_type_id, selected: params[:project_type_id], collection: @project_type %>
+<% end %>
+<% if params[:category_id].blank? %>
+	<%= f.input :category_id, collection: Category.all.order("title DESC") %>
+<% else %>
+	<%= f.input :category_id, selected: params[:category_id], collection: @category %>
+<% end %>
+<% if params[:product_id].blank? %>
+	<%= f.input :product_id, collection: Product.all.order("title DESC") %>
+<% else %>
+	<%= f.input :product_id, selected: params[:product_id], collection: @product %>
+<% end %>
+<div class="row">
+	<div class="col-sm-12">
+
+		<%= f.input :title %>
+		<%= f.input :description, as: :textile_editor %>
+		<hr />
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-6">
+		<h3>Imagen principal</h3>
+		<% unless @project.image.blank? %>
+			<div class="image_preview">
+				<%= image_tag(@project.image.url(:thumb)) %>
+			</div>
+		<% end %>
+		<%= f.input :image %>
+	</div>
+</div>
+
+<hr />
+
+<div class="row">
+	<div class="col-sm-6">
+		<h3>Elemento destacado</h3>
+			<%= f.input_field :featured, as: :boolean, checked_value: true, unchecked_value: false %>
+	</div>
+</div>
+<hr />
+<div class="form-actions">
+  <% label = @project.new_record? ? "Crear" : "Actualizar" -%>
+  <%= f.submit label, :class => 'btn btn-primary' %>
+  &nbsp;
+  <%= link_to "cancelar", super_admin_projects_path, :class => 'btn btn-default' %>
+</div>

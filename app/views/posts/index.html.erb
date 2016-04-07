@@ -1,0 +1,79 @@
+
+
+<!-- Page Header
+========================-->
+
+<div id="en-header">
+    <div class="container">
+        <h2 class="pull-left"> <%= link_to "Colaboraciones", posts_path %></h2>
+        <ol class="breadcrumb pull-right">
+          
+        </ol>
+    </div>
+</div>
+
+
+<div id="en-content">
+  <div class="container">
+
+    <div id="blogposts" class="row">
+      <!-- Blog Posts Content -->
+      <div class="col-md-8">
+
+        <div class="news"> <!-- Blog Post/News #1 -->
+          <% @posts.each_with_index do |post| %>
+          <%= render partial: "/modules/list/post", object: post %>
+          <% end %>
+        </div>
+
+        <!-- Pagination -->
+        <div class="text-center">
+          <ul class="pagination">
+            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#"><span aria-hidden="true">»</span><span class="sr-only">Next</span></a></li>
+          </ul>
+        </div>
+
+      </div> <!-- End Blog Posts Content -->
+
+      <!-- Sidebar -->
+      <div class="col-md-4">
+        <div class="sidebar">
+
+          <div class="sidebar-widget search">
+            <div class="widget-title text-left">
+              <h4>Buscar Blog</h4>
+              <hr>
+            </div>
+
+            <form role="search">
+              <div class="input-group form-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default noradius" type="button"><i class="fa fa-search"></i></button>
+                </span>
+              </div>
+            </form>
+
+          </div>
+
+
+          <%= render partial: "/posts/lastest_post" %>
+
+
+
+  <!-- POST ARCHIVE -->
+<!--   <%= render partial: "/posts/post_archive" %> -->
+
+
+</div>
+</div><!-- End Sidebar -->
+
+</div>
+
+</div>
+</div>

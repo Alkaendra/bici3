@@ -1,0 +1,15 @@
+<% for @webimage in @webimages %>
+	<div class="module_item">
+		<div class="item_name">
+			<span><%= link_to @webimage.title, :controller => 'super_admin/webimages', :action => 'edit', :id => @webimage.id%></span>
+		</div>
+		<div class="module_item_actions">
+			<p>
+				<%= link_to '<span class="glyphicon glyphicon-file"></span>'.html_safe, super_admin_webimage_path(@webimage.id), :class => 'list-row-action-wrapper-link' %>
+ 			  <%= link_to '<span class="glyphicon glyphicon-pencil"></span>'.html_safe, edit_super_admin_webimage_path(@webimage.id), :class => 'list-row-action-wrapper-link' %>
+				<%= link_to '<span class="glyphicon glyphicon-trash"></span>'.html_safe, super_admin_webimage_path(@webimage.id), :class => 'list-row-action-delete-one list-row-action-wrapper-link', :method => :delete, :data => {:confirm => "Estas seguro?"} %>
+			</p>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+<% end %>

@@ -1,0 +1,29 @@
+<div class="page-header clearfix">
+  <div class="pull-left">
+    <h1><%= @project_type.title %></h1>
+  </div>
+  <div class="pull-right btn-header">
+    <%= link_to '<span class="glyphicon glyphicon-pencil"></span> Editar'.html_safe, edit_super_admin_project_type_path(@project_type.id), :class => 'btn btn-primary' %></span>
+    &nbsp;
+    <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Volver'.html_safe, super_admin_project_types_path, :class => 'btn btn-default' %></span>
+  </div>
+</div>
+
+<div class=tabs-content>
+
+<p>
+  <strong>Id:</strong>
+  <%= @project_type.id %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @project_type.title %>
+</p>
+<p>
+  <strong>Descripcion:</strong>
+  <%= @project_type.description %>
+</p>
+
+
+</div>

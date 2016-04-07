@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Titulo:
+  = @categorium.titulo
+%p
+  %b Slug:
+  = @categorium.slug
+%p
+  %b Descripcion:
+  = @categorium.descripcion
+%p
+  %b Image:
+  = @categorium.image
+%p
+  %b Meta descripcion:
+  = @categorium.meta_descripcion
+%p
+  %b Featured:
+  = @categorium.featured
+
+= link_to 'Edit', edit_categorium_path(@categorium)
+\|
+= link_to 'Back', categoria_path

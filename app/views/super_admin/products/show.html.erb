@@ -1,0 +1,48 @@
+<div class="page-header clearfix">
+  <div class="pull-left">
+    <h1><%= @product.title %></h1>
+  </div>
+  <div class="pull-right btn-header">
+    <%= link_to '<span class="glyphicon glyphicon-pencil"></span> Editar'.html_safe, edit_super_admin_product_path(@product.id), :class => 'btn btn-primary' %></span>
+    &nbsp;
+    <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Volver'.html_safe, super_admin_products_path, :class => 'btn btn-default' %></span>
+  </div>
+</div>
+
+<div class=tabs-content>
+
+<p>
+  <strong>Id:</strong>
+  <%= @product.id %>
+</p>
+
+<p>
+  <strong>Categoría:</strong>
+  <%= @product.category.id %> ( <%= @product.category.title %> )
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @product.title %>
+</p>
+<p>
+  <strong>Descripcion:</strong>
+  <%= @product.description %>
+</p>
+<p>
+  <strong>Precio:</strong>
+  <%= @product.precio %>
+</p>
+
+<p>
+  <strong>Destacado:</strong>
+  <%= @product.featured %>
+</p>
+
+<%= image_tag(@product.image.url(:thumb)) %>
+
+
+
+
+
+</div>

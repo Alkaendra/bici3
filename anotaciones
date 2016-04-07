@@ -1,0 +1,40 @@
+rails g model Category title description:text image
+rails g model Product title description:text image featured:boolean category:references
+rails g model Project_type title description:text
+rails g model Project title description:text place image featured:boolean category:references product:references project_type:references 
+
+
+rails g scaffold_controller category
+rails g controller welcome index
+
+
+gem 'mysql2', '~> 0.3.18'
+gem 'rails', github: 'rails/rails', branch: '4-2-stable'
+
+
+rails g model Post title slug:string:uniq body:text image:attachment published:boolean meta_description image:attachment
+rails g model Category title slug:string:uniq description:text image:attachment meta_description featured:boolean
+rails g model Product title slug:string:uniq description:text image:attachment meta_description featured:boolean category:references
+rails g model Project_type title description:text slug:string:uniq
+rails g model Project title slug:string:uniq description:text place image:attachment meta_description featured:boolean category:references product:references project_type:references 
+
+rails g model Image photo:attachment headline caption:text
+
+rails g model Webimage title module image:attachment
+
+rails generate controller namespace_name/controller_name
+rails generate controller super_admin/posts index new edit create show update destroy
+rails generate controller super_admin/categories index new edit create show update destroy
+rails generate controller super_admin/products index new edit create show update destroy
+rails generate controller super_admin/project_types index new edit create show update destroy
+rails generate controller super_admin/projects index new edit create show update destroy
+rails generate controller super_admin/webimages index new edit create show update destroy
+
+
+/*******PARTE PUBLICA*******/
+rails generate controller welcome index
+rails generate controller products index
+rails generate controller projects index
+rails generate controller posts index
+
+
