@@ -1,0 +1,138 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.btn-default {
+    background: #1e120d;
+    color: white;
+}
+.overlay-container {
+    height: 250px;
+}
+.margin-down {
+    margin-bottom: 50px;
+}
+a.btn-sm-link:hover {
+    color: black;
+}
+.producto-precio {
+    color: #74576c;
+    margin-top: 10px;
+    text-align: right;
+}
+.icon-plus-1::before {
+    margin-top: 22px;
+}
+/* contacto */
+
+.banner.contactar {
+    background-image: image-url("page-contact-banner.jpg");
+    background-position: 50% 30%;
+}
+
+/* barra de navegación */
+
+/*.transparent-header header.header.transparent-header-on {
+	background-color: #1e120d;
+}
+.transparent-header .header:not(.dark) .navbar-nav > li:not(.active) > a {
+    color: #ddd;
+}*/
+
+.transparent-header header.header.dark.transparent-header-on {
+    background-color: #1e120d;
+}
+
+.header.dark {
+    background-color: #1e120d;
+}
+
+.fixed-header-on .dark.header.fixed {
+    background-color: #1e120d;
+}
+
+#logo {
+	img {
+		height: 100px !important;
+		position: absolute;
+        z-index:30;
+	}
+}
+
+.fixed-header-on .header .logo img {
+    max-height: 75px;
+}
+
+/*.navbar-default .navbar-nav > li > a {
+    padding: 27px 15px 27px;
+}*/
+
+.dropdown > a::before {
+	top :31px;
+}
+
+.col-md-3 + .col-md-9 .mega-menu:not(.narrow) .dropdown-menu {
+    left: -193px !important;
+    width: 740px !important;
+}
+
+/*.transparent-header .header:not(.dark) .navbar-nav > li:not(.active):hover > a {
+    color: #666;
+}
+
+.transparent-header .header-dropdown-buttons .btn-group > .btn {
+    color: white;
+}*/
+
+/* slider */
+.fa-heartbeat:before {
+    content: "\f21e";
+  }
+.tp-caption.sfb {
+    .text {
+        margin-top: 6px;
+        margin-left: 10px;
+    }
+}
+
+  /* marcas */
+.clients .client-image {
+    width:  140px;
+    margin: 15px;
+}
+
+/**/
+
+.icon i {
+    margin-top: 15px;
+}
+
+.icon.small i {
+    margin-top: 10px;
+}
+
+.icon i.fa-line-chart {
+    margin-top: 30px;
+}
+
+
+
+/* footer */
+
+.dark {
+    .footer {
+      background-color: #1e120d;  
+    }
+}
+
+.logo-footer {
+    margin-bottom:15px;
+}
+
+.footer {
+    color: #777;
+    .footer-content .social-links li a {
+        color: #337ab7;    
+        border-color: #337ab7;
+    }
+    
+}

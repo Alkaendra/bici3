@@ -1,0 +1,178 @@
+.admin_content {
+	.container {
+		.module_list {
+			.module_actions {
+				padding:3px 10px;
+				background: #eee;
+				text-align: right;
+				clear:both;
+				border-radius: 10px;
+				margin-bottom: 20px;
+				border: 1px solid #E4E4E4;
+				h2 {
+					color: #7B7B7B;
+			    float: left;
+			    font-size: 1.6em;
+			    margin: 0;
+			    padding: 10px;
+			    color:#666;
+				}
+				.action_items {
+					float:right;
+					font-size: 1.5em;
+					padding:8px 10px 0px 0px;
+				}
+			}
+			.module_item {
+				padding:10px;
+				border-bottom: 1px solid #ddd;
+				&.well {
+					position:relative;
+					.module_item_actions {
+						position: absolute;
+						right:0px;
+						top:16px;
+					}
+				}
+				.item_name {
+					margin:20px;
+					@media screen and (min-width: $breakpoint_768) {
+						margin:0px;
+						width: 60%;
+						display: inline-block;
+						vertical-align: top;
+					}
+				}
+				.module_item_actions {
+					font-size: 1.2em;
+					float: right;
+					@media screen and (min-width: $breakpoint_768) {
+						width: 30%;
+						display: inline-block;
+						vertical-align: top;
+						text-align: right;
+					}
+					.glyphicon-ok {
+						&.dead {
+							color:#666;
+						}
+					}
+					p {
+						a {
+							margin:10px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.admin_body {
+
+}
+
+.see_all {
+	margin:20px 0px;
+}
+
+.copyright {
+	text-align: right;
+	margin:30px 0px;
+	font-size: 0.8em;
+	color:#666;
+}
+
+
+textarea {
+	min-height:250px;
+	width:100%;
+}
+
+
+/* ==========================================================================
+Login Form
+========================================================================== */
+
+.form-signin {
+  max-width: 500px;
+  padding: 15px;
+  margin: 0 auto;
+  button {
+    &.btn {
+      box-shadow: none;
+    }
+  }
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin {
+  margin-top:10%;
+  background: #F0F0F0;
+  border-radius: 12px;
+  .form-signin-heading {
+    margin:10px auto 20px auto;
+    color:#777;
+  }
+  .copyright {
+  position: absolute;
+  margin-top:30px;
+      color:#777;
+  }
+}
+
+.clearboth {
+	clear:both;
+}
+
+
+.image_preview {
+	width:100%;
+	max-width: 150px;
+	padding:4px;
+	border:1px solid #ddd;
+	img {
+		width: 100%;
+	}
+}
+
+.images {
+	position: relative;
+	padding-bottom: 40px;
+	.links {
+		display: block;
+		width: 100%;
+		float:none;
+		position: absolute;
+		bottom:0px;
+		left:20px;
+	}
+}

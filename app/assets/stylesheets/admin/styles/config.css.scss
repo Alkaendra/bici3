@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Breakpoints
+   ========================================================================== */
+
+$breakpoint_768: 768px;
+$breakpoint_824: 824px;
+$breakpoint_1080: 1080px;
+$breakpoint_1230: 1230px;
+
+
+.clearboth {
+	clear:both;
+}
+
+.alert {
+	margin:18px 0px;
+}
+
+.navbar-default {
+	background: #000;
+	.nav {
+		li {
+			a {
+				color:#fff;
+				&:hover {
+					color: #ddd;
+				}
+			}
+		}
+		.dropdown-menu {
+			li {
+				a {
+					color:#333;
+				}
+			}
+		}
+	}
+}

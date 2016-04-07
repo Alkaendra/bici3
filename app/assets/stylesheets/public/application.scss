@@ -1,0 +1,53 @@
+//
+// Prefer imports over require
+// http://pivotallabs.com/structure-your-sass-files-with-import/
+//
+
+//= require_self
+
+// Core
+@import "variables";
+@import "bootstrap";
+@import "auth";
+@import "avatar";
+@import "cards";
+@import "footer";
+@import "hacks";
+@import "animate";
+@import "animations";
+@import "fontello";
+@import "font-awesome";
+@import "magnific-popup";
+@import "settings";
+@import "style";
+@import "owl.carousel";
+@import "owl.transitions";
+@import "hover-min";
+@import "bootstrap2";
+@import "custom";
+
+// Plugins
+
+
+
+//
+// Minor Tweaks
+//
+
+// Padding to clear fixed nav
+body {
+  //padding-top: 70px;
+}
+
+// Make sure alerts are nicely formatted
+.alert {
+  a {
+    white-space: nowrap;
+  }
+}
+
+// Postion loading spinner at bottom right
+#nprogress .spinner {
+  bottom: 15px;
+  top: auto;
+}
