@@ -35,6 +35,21 @@ Bicicletea::Application.configure do
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
 
+  config.action_mailer.delivery_method = :smtp
+    config.action_mailer.default_url_options = { host:'146.185.146.241', port: '3000' }
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.default :charset => "utf-8"
+    config.action_mailer.smtp_settings = {
+        :address => "smtp.gmail.com",
+        :port => 587,
+        :domain => '146.185.146.241',
+        :user_name => "frarilor@gmail.com",
+        :password => "Mdueleunhuevo2013",
+        :authentication => :plain,
+        :enable_starttls_auto => true
+    }
+
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
