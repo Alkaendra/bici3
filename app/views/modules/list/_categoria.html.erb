@@ -23,7 +23,13 @@
       </div>
     </div>
     <div class="body">
-      <h3><%= link_to categoria.title, categories_path(:category => categoria.id, :parent => true) %></h3>
+      <h3>
+        <% if !categoria.children.empty? %>
+          <%= link_to categoria.title, categories_path(:category => categoria.id, :parent => true) %>
+        <% else %>
+          <%= link_to categoria.title, products_path(:category => categoria.id) %>
+        <% end %>
+      </h3>
       <p class="small"><%= categoria.description %></p>                     
     </div>
   </div>

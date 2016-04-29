@@ -1,0 +1,70 @@
+
+      <section class="main-container">
+
+        <div class="container">
+          <div class="row">
+
+            <!-- main start -->
+            <!-- ================ -->
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 space-bottom">
+              <h1><%= @prd.title %></h1>
+              <h4><%= @c.title %></h4>
+              <%= image_tag @prd.image.url(:normal), :class => 'info img-responsive', :alt => @prd.title %>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6">
+              <p class="lead">¿Quieres saber algo más sobre este artículo? Rellena el siguiente formulario y estaremos encantados de informarte.</p>
+              <div class="alert alert-success hidden" id="MessageSent">
+                Hemos recibido tu mensaje.
+              </div>
+              <div class="alert alert-danger hidden" id="MessageNotSent">
+                Oops! Something went wrong please refresh the page and try again.
+              </div>
+              <div class="contact-form">
+                <%= simple_form_for @info, :url => url_for(:controller => 'infos', :action => 'create'), :method => 'post', :html => {:class => 'margin-clear', :id => "info-form", :name => "sentMessage", :role => "form" } do |f| %>
+                
+                  <div class="form-group has-feedback">
+                    <label for="nombre">Nombre*</label>
+                    <%= f.input :nombre, label: false, placeholder: 'Nombre', :required => true, error: 'Nombre es obligatorio, por favor escribe uno' %>           
+                    <i class="fa fa-user form-control-feedback"></i>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group has-feedback">
+                    <label for="email">Email*</label>
+                    <%= f.input :email, label: false, placeholder: 'Email', :required => true, error: 'Email es obligatorio, por favor escribe uno' %>
+                    <i class="fa fa-envelope form-control-feedback"></i>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group has-feedback">
+                    <label for="tema">Producto</label>
+                    <%= f.input :tema, label: false, :input_html => { :value => @prd.title }, :required => true, error: 'Tema es obligatorio, por favor escribe uno' %>
+                    <i class="fa fa-bicycle form-control-feedback"></i>
+                    <p class="help-block text-danger"></p>
+                  </div>                
+                  <div class="form-group has-feedback">
+                    <label for="mensaje">Mensaje*</label>
+                    <%= f.input :mensaje, :as => :text, label: false, placeholder: 'Por favor redacte su mensaje', :required => true, error: 'El mensaje es obligatorio, por favor escribe uno', :input_html => { class: 'test', :cols => 5, :rows => 6 } %>
+                    <i class="fa fa-pencil form-control-feedback"></i>
+                  </div>
+                  <input type="submit" value="Enviar" class="submit-button btn btn-default">
+                <% end %>
+              </div>
+            </div>
+            <!-- main end -->
+
+            <!-- sidebar start -->
+            <!-- ================ -->
+            
+            <!-- sidebar end -->
+          </div>
+        </div>
+      </section>
+      <!-- main-container end -->
+
+      <!-- section start -->
+      <!-- ================ -->
+      <section id="collapseMap">
+        <div id="map-canvas"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2982.5656250028514!2d-0.9178586843388377!3d41.62190388938628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd596ac605292bfb%3A0xedc3ede826474aec!2sBicicletea!5e0!3m2!1ses!2ses!4v1459785894663" width="100%" height="600" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+      </section>
+      <!-- section end -->
+
+      

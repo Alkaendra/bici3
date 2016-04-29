@@ -1,8 +1,11 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+h1 {
+    color: #74576c;
+}
 .btn-default {
-    background: #1e120d;
+    background: #74576c;
     color: white;
 }
 .overlay-container {
@@ -10,6 +13,9 @@ body {
 }
 .margin-down {
     margin-bottom: 50px;
+}
+.mt-50 {
+    margin-top: 50px;
 }
 a.btn-sm-link:hover {
     color: black;
@@ -135,4 +141,23 @@ a.btn-sm-link:hover {
         border-color: #337ab7;
     }
     
+}
+
+/* sección infos */
+.info.img-responsive {
+   
+    margin: 50px auto;
+} 
+.aviso_info {
+    font-size: 18px;
+
+}
+.info .logo, .info .logo img {
+    margin: 25px auto;
+}
+.info .row {
+    text-align: center;
+    .btn {
+        margin: 25px auto;
+    }
 }
