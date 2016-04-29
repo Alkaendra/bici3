@@ -43,8 +43,8 @@ Bicicletea::Application.configure do
         :address => "smtp.gmail.com",
         :port => 587,
         :domain => 'localhost:3000',
-        :user_name => "asemar@gmail.com",
-        :password => "primojavi",
+        :user_name => "frarilor@gmail.com",
+        :password => "Mdueleunhuevo2013",
         :authentication => :plain,
         :enable_starttls_auto => true
     }

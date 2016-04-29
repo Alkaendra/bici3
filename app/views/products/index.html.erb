@@ -12,8 +12,19 @@
                                 <li><a href="#pill-3" role="tab" data-toggle="tab" title="Top Sellers"><i class=" icon-up-1"></i> Top Sellers</a></li>
                             </ul>-->
                             <!-- Tab panes -->
+                            <div class="row mt-50">
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">            
+                                    <%= image_tag @cn.image.url(:normal), :class => 'img-responsive', :alt => @cn.title %>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+                                    <p>Somos <b>punto de venta oficial</b> de bicicletas <b><%= @cn.title %>.</b></p>
+                                    <p>En nuestra tienda te asesoramos, ajustamos y llevamos todo el mantenimiento necesario de tu nueva <%= @cn.title %>.</p>
+                                    <p>Confiar en una bicicleta <%= @cn.title %> es garantía de calidad, rendimiento y fiabilidad.</p>
+                                    <p>Las bicicletas <%= @cn.title %> poseen diseños de vanguardia en busca del máximo rendimiento, y se elaboran a partir de los mejores materiales, aplicando las últimas tecnologías y utilizando los procesos de fabricación más avanzados de la industria.</p>
+                                </div>
+                            </div>
                             
-                            <div class="tab-content clear-style">
+                            <div class="tab-content clear-style mt-50">
                                 <div class="tab-pane active" id="pill-1">
                                     <div class="row masonry-grid-fitrows grid-space-10">
                                         <% @products.each do |product| %>

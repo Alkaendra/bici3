@@ -16,6 +16,8 @@ Bicicletea::Application.routes.draw do
   resources :posts, only: [:index, :show]
   match '/contacts',     to: 'contacts#new',             via: 'get'
   resources "contacts", only: [:new, :create]
+  match '/infos',     to: 'infos#new',         via: 'get'
+  resources :infos, only: [:new, :create]
 
 
   #match 'posts/by_year_and_month/:year/:month' => 'posts#by_year_and_month', :as=> :posts_by_year_and_month,  via: 'get'

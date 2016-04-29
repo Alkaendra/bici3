@@ -8,12 +8,14 @@ add_breadcrumb "productos y servicios", :products_path
     @products = Product.joins(:category)
     if params[:category]
       @products = Product.where(:category => params[:category])
+      @cn = Category.find(params[:category])
     else
       @products = Product.all
     end
 	end
 
 	def show
+
     @categorias = Category.where(parent_id: nil).order("updated_at ASC")
 		@producto = Product.friendly.find(params[:id])
 
