@@ -25,7 +25,7 @@
     <div class="body">
       <h3>
         <% if !categoria.children.empty? %>
-          <%= link_to categoria.title, products_path(:category => categoria.id, :parent => true) %>
+          <%= link_to categoria.title, categories_path(:category => categoria.id, :parent => true) %>
         <% else %>
           <%= link_to categoria.title, products_path(:category => categoria.id) %>
         <% end %>
