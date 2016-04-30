@@ -36,7 +36,7 @@ Bicicletea::Application.configure do
   config.assets.version = '1.0'
 
   config.action_mailer.delivery_method = :smtp
-    config.action_mailer.default_url_options = { host:'146.185.162.145', port: '25' }
+    config.action_mailer.default_url_options = { host:'146.185.162.145' }
     config.action_mailer.perform_deliveries = true
     config.action_mailer.raise_delivery_errors = true
     config.action_mailer.default :charset => "utf-8"
