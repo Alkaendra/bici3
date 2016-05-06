@@ -98,7 +98,7 @@
 																	<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
 																		<ul class="menu">
 																			<% @categorias.all.each do |categoria| %>
-                      <li><%= link_to categoria.title, categories_path(:category => categoria.id) %></li>
+                      <li><%= link_to categoria.title, categories_path(:category => categoria.id, :parent => true ) %></li>
                       <% end %>
 																		</ul>
 																    </div>
