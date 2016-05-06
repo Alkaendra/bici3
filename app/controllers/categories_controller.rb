@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
 			if params[:parent]
 				@categor = Category.where(:parent_id => params[:category]).order("id ASC")
 			else
-      			@categor = Category.where(:id=> params[:category])
+      			@categor = Category.where(:id=> params[:category]).order("id ASC")
       		end
       		@tit = "Nuestro catálogo de #{Category.find(params[:category]).title}"
 	    else
