@@ -19,13 +19,7 @@
 			$("body").removeClass("no-trans");
 		});
 		// Enable Smooth Scroll only on Chrome and only on Win and Linux Systems
-		var platform = navigator.platform.toLowerCase();
-		if ((platform.indexOf('win') == 0 || platform.indexOf('linux') == 0) && !Modernizr.touch) {
-			if ($.browser.webkit) {
-				$.webkitSmoothScroll();
-				console.log("hello webkit");
-			}
-		};
+
 		//Show dropdown on hover only for desktop devices
 		//-----------------------------------------------
 		var delay=0, setTimeoutConst;
@@ -178,7 +172,7 @@
 				startWithSlide:0
 			});
 			$('.transparent-header .slider-banner-container .slider-banner-fullscreen').show().revolution({
-				delay:10000,
+				delay:8000,
 				startwidth:1140,
 				startheight:520,
 				fullWidth:"off",
@@ -230,7 +224,7 @@
 			});
 
 			$('.slider-banner-container .slider-banner-fullwidth').show().revolution({
-				delay:10000,
+				delay:8000,
 				startwidth:1140,
 				startheight:450,
 				
@@ -279,7 +273,7 @@
 			});
 
 			$('.slider-banner-container .slider-banner-fullwidth-big-height').show().revolution({
-				delay:10000,
+				delay:8000,
 				startwidth:1140,
 				startheight:650,
 				
@@ -328,7 +322,7 @@
 			});
 
 			$('.banner:not(.dark-bg) .slider-banner-container .slider-banner-boxedwidth').show().revolution({
-				delay:10000,
+				delay:8000,
 				startwidth:1140,
 				startheight:450,
 				
@@ -378,7 +372,7 @@
 			});
 
 			$('.banner.dark-bg .slider-banner-container .slider-banner-boxedwidth').show().revolution({
-				dealy:18000,
+				delay:8000,
 				startwidth:1140,
 				startheight:450,
 				
@@ -428,7 +422,7 @@
 			});
 
 			$('.slider-banner-container .slider-banner-boxedwidth-no-shadow').show().revolution({
-				dealy:18000,
+				delay:8000,
 				startwidth:1140,
 				startheight:450,
 				
@@ -478,7 +472,7 @@
 			});
 
 			$('.banner:not(.dark-bg) .slider-banner-container .slider-banner-boxedwidth-stopped').show().revolution({
-				dealy:18000,
+				delay:8000,
 				startwidth:1140,
 				startheight:450,
 				
@@ -528,7 +522,7 @@
 			});
 
 			$('.banner.dark-bg .slider-banner-container .slider-banner-boxedwidth-stopped').show().revolution({
-				dealy:18000,
+				delay:8000,
 				startwidth:1140,
 				startheight:450,
 				
@@ -680,7 +674,7 @@
 		//-----------------------------------------------
 		if ($(".graph").length>0) {
 			// Creates random numbers you don't need this for real graphs
-			var randomScalingFactor = function(){ return Math.round(Math.random()*500)};
+			var randomScalingFactor = function(){ return Math.round(Math.random()*500);};
 
 			if ($(".graph.line").length>0) {
 				// Data for line charts
@@ -718,7 +712,7 @@
 						data : [0,100,200,300,400,500,400]
 					}
 					]
-				}
+				};
 
 				// Line Charts Initialization
 				$(window).load(function() {
@@ -749,7 +743,7 @@
 							data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
 						}
 					]
-				}
+				};
 				
 				// Bar Charts Initialization		
 				$(window).load(function() {
@@ -1387,24 +1381,24 @@
 		//-----------------------------------------------
 		if ($(".affix-menu").length>0) {
 			setTimeout(function () {
-				var $sideBar = $('.sidebar')
+				var $sideBar = $('.sidebar');
 
 				$sideBar.affix({
 					offset: {
 						top: function () {
-							var offsetTop = $sideBar.offset().top
-							return (this.top = offsetTop - 65)
+							var offsetTop = $sideBar.offset().top;
+							return (this.top = offsetTop - 65);
 						},
 						bottom: function () {
-							var affixBottom = $(".footer").outerHeight(true) + $(".subfooter").outerHeight(true)
+							var affixBottom = $(".footer").outerHeight(true) + $(".subfooter").outerHeight(true);
 							if ($(".footer-top").length>0) {
-								affixBottom = affixBottom + $(".footer-top").outerHeight(true)
+								affixBottom = affixBottom + $(".footer-top").outerHeight(true);
 							}						
-							return (this.bottom = affixBottom+50)
+							return (this.bottom = affixBottom+50);
 						}
 					}
-				})
-			}, 100)
+				});
+			}, 100);
 		}
 
 		//Scroll Spy

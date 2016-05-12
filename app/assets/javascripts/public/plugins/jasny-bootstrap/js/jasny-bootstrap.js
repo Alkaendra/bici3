@@ -625,7 +625,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
           this.buffer[j] = this.options.placeholder
         } else
           break
-        j = this.seekNext(j)
+        var j = this.seekNext(j)
       }
     }
     this.writeBuffer()

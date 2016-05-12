@@ -38,7 +38,7 @@ a.btn-sm-link:hover {
 /* barra de navegación */
 
 /*.transparent-header header.header.transparent-header-on {
-	background-color: #1e120d;
+    background-color: #1e120d;
 }
 .transparent-header .header:not(.dark) .navbar-nav > li:not(.active) > a {
     color: #ddd;
@@ -57,11 +57,11 @@ a.btn-sm-link:hover {
 }
 
 #logo {
-	img {
-		height: 100px !important;
-		position: absolute;
+    img {
+        height: 100px !important;
+        position: absolute;
         z-index:30;
-	}
+    }
 }
 
 .fixed-header-on .header .logo img {
@@ -73,7 +73,7 @@ a.btn-sm-link:hover {
 }*/
 
 .dropdown > a::before {
-	top :31px;
+    top :31px;
 }
 
 .col-md-3 + .col-md-9 .mega-menu:not(.narrow) .dropdown-menu {
@@ -108,7 +108,13 @@ a.btn-sm-link:hover {
 
 /**/
 
+.icon.small i, .icon.small i:before, .icon i {
+   line-height: 2.5em;
+}
 
+.icon i.circle.icon-chart-bar:before, .icon i.circle.icon-thumbs-up:before, .icon i.circle.icon-cog-outline:before{
+    margin-top: 30px;
+}
 
 
 
@@ -130,6 +136,11 @@ a.btn-sm-link:hover {
         color: #337ab7;    
         border-color: #337ab7;
     }
+    .overlay-container {
+        height: auto !important;
+    }
+
+
     
 }
 

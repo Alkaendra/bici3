@@ -19,35 +19,11 @@
 @import "font-awesome";
 @import "magnific-popup";
 @import "settings";
-@import "style";
 @import "owl.carousel";
 @import "owl.transitions";
 @import "hover-min";
-@import "bootstrap2";
+// @import "bootstrap2";
+@import "style";
 @import "custom";
 
-// Plugins
 
-
-
-//
-// Minor Tweaks
-//
-
-// Padding to clear fixed nav
-body {
-  //padding-top: 70px;
-}
-
-// Make sure alerts are nicely formatted
-.alert {
-  a {
-    white-space: nowrap;
-  }
-}
-
-// Postion loading spinner at bottom right
-#nprogress .spinner {
-  bottom: 15px;
-  top: auto;
-}
